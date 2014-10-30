@@ -50,9 +50,9 @@ read REPODIR
 
 #creation of config, based on input
 
-echo "Environments:
-Projectname: \"$PROJECTNAME\"
+echo "Projectname: \"$PROJECTNAME\"
 AvailableEnvironments: \"Live, Test, Dev\"
+Environments:
   Live:
     #required
     Host: \"$HOST\"
@@ -65,6 +65,10 @@ AvailableEnvironments: \"Live, Test, Dev\"
     #here goes data for a test server
   Dev:
     #here goes data for dev server - you can add as many servers as you want
+Menu:
+  Item1:
+    Title: SSH Live Site
+    Command: \"ttools-core/local/ssh.sh Live\"
 " > ttools-config.yml;
 
 

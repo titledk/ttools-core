@@ -10,7 +10,7 @@
 MODULEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )";
 
 #Getting environment specific vars
-VARS="$MODULEDIR/lib/shell/vars-for-env.sh $1"
+VARS="$MODULEDIR/lib/vars-for-env.sh $1"
 
 
 #evaluate variables:
