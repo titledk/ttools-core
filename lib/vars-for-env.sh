@@ -28,6 +28,9 @@ host=$PRE"_Host"
 sshuser=$PRE"_Sshuser"
 repodir=$PRE"_Repodir"
 sshport=$PRE"_Sshport"
+composerpath=$PRE"_Composerpath"
+phppath=$PRE"_PhpPath"
+
 
 
 #These are the variables that are exported:
@@ -36,6 +39,20 @@ echo "ENV_HOST=${!host}"
 echo "ENV_SSHUSER=${!sshuser}"
 echo "ENV_REPODIR=${!repodir}"
 echo "ENV_SSHPORT=${!sshport}"
+#php path
+if [[ -z "${!phppath}" || "${!phppath}" == "" ]]; then
+	echo "ENV_PHPPATH=php"
+else
+	echo "ENV_PHPPATH=${!phppath}"
+fi
+#composer path
+if [[ -z "${!composerpath}" || "${!composerpath}" == "" ]]; then
+	echo "ENV_COMPOSERPATH=composer"
+else
+	echo "ENV_COMPOSERPATH=${!composerpath}"
+fi
+
+
 
 
 # Based on these, the folling variables are defined
