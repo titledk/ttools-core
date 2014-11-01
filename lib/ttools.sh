@@ -123,13 +123,17 @@ mainmenu_input() {
 					#Executing the configured command
 					title="Menu_Item"$i"_Title"
 					command="Menu_Item"$i"_Command"
-					execute_note "executing ${!title}...";
+					execute_start_note "${!title}";
 					
 					#execCmd="$MODULEDIR/${!command}" 
 					execCmd="${!command}" 
 					
 					#echo $execCmd;
 					$execCmd;
+					
+					execute_end_note "${!title}";
+					read -p "Press enter for menu...";
+					mainmenu_input;
 				fi
 
 			done
@@ -143,14 +147,22 @@ mainmenu_input() {
 
 }
 
-
-execute_note() {
+#This is what's shown whenever a command from the menu is executed
+execute_start_note() {
 	echo "${MENU}***********************************************${NORMAL}"
 	echo "${MENU}Executing ${NORMAL}$1 ${MENU}...${NORMAL}"
 	#echo "Direct command: $SCRIPT_COMMAND $ALL_ARGS"
 	echo "${MENU}***********************************************${NORMAL}"
 
 }
+#This is what's shown whenever a command from the menu has finished executing
+execute_end_note() {
+	echo "${MENU}***********************************************${NORMAL}"
+	echo "${MENU}${NORMAL}$1 ${MENU}has finished executing.${NORMAL}"
+	echo "${MENU}***********************************************${NORMAL}"
+
+}
+
 
 
 
