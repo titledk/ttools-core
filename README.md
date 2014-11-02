@@ -41,6 +41,14 @@ A standard config will be set up for you on install. Here's an example of how th
 			Command: "my-scripts/my-specific-command.sh"
 
 
+## Installation
+
+Run the following command. This module will be added to your project as a sub module.
+
+	git submodule add git://github.com/titledk/ttools-core.git;./ttools-core/_install.sh;
+
+
+
 ## How To Use
 
 _Terminal Tools_ will be installed in your repository root.    
@@ -48,28 +56,26 @@ Once installed, run `./ttools`, and you'll be presented with a list of options.
 
 The `ttools-core` module contains the very basics - libraries, menu, and a means
 to easily ssh into your specific servers.    
-The idea is for everything else to be added via modules. We're planning to port 
-the following functionality over to modules from already existing code, 
-but there should be many more use cases:
-
-* easy deployment of your SilverStripe sites
-* one-click sync of your local site with your production site
-* git/composer/silversmith helpers
+Everything else can be added via modules.
 
 
-## SilverStripe specific
-
-By reading this you might see that much of what we plan to use this tool for is
-SilverStripe specific. That's because we love and endorse SilverStripe, but
-the core of this module is deliberately decoupled to allow you to use it with any
-framework or scripting language. It's written in pure bash.
 
 
-## Installation
+## Modules
 
-Run the following command. This module will be added to your project as a sub module.
+The following modules are available:
 
-	git submodule add git://github.com/titledk/ttools-core.git;./ttools-core/_install.sh;
+* [Git Helpers](https://github.com/titledk/ttools-githelpers): 
+Pull and push - and git based deployment to your environments
+* **Wordpress Sync (on it's way)**: syncing database and assets from 
+Wordpress sites - for development and backup
+
+
+Planned:
+
+* **SilverStripe Sync**: syncing database and assets from SilverStripe sites - for development and backup
+* **SilverStripe Deployment**: Git-based deployment like in our [deployment module](https://github.com/titledk/silverstripe-deployment) 
+
 
 
 ## Roadmap/Ideas/Plans
@@ -97,6 +103,14 @@ sometimes you just want to go with the defaults, as it's just easier.
 
 So it would make sense if modules could have default configurations that
 could just plug in to the menu.
+
+
+### Dependency management
+
+The more modules that will exist, the more there'll be a need
+for dependency management. At the moment no big issue,
+but good to think about.
+
 
 
 ### Make the default environment configurable
