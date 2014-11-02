@@ -90,6 +90,14 @@ e.g.:
 	v. dev/#e185ff8 (2014-07-23)
 
 
+### Module default configurations
+
+While the strength of _Terminal Tools_ is the easy configurable menu,
+sometimes you just want to go with the defaults, as it's just easier.
+
+So it would make sense if modules could have default configurations that
+could just plug in to the menu.
+
 
 ### Make the default environment configurable
 
