@@ -66,9 +66,11 @@ Environments:
   Dev:
     #here goes data for dev server - you can add as many servers as you want
 Menu:
-  Item1:
-    Title: SSH Live Site
-    Command: \"ttools-core/local/ssh.sh Live\"
+  Heading1:
+    Title: Live Site
+    Item1:
+      Title: SSH Live Site
+      Command: \"ttools-core/local/ssh.sh Live\"
 " > ttools-config.yml;
 
 

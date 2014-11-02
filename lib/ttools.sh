@@ -68,21 +68,31 @@ show_mainmenu(){
 	#echo "${MENU}***********************************************${NORMAL}"
 	
 	#Creating menu based on individual configuration
+	iii=1;
 	for i in {1..30}
 	do
-		title="Menu_Item"$i"_Title"
-		#command="Menu_Item"$i"_Command"
+		title="Menu_Heading"$i"_Title"
 		if [ "${!title}" != "" ]; then
 			#echo ${!title}
 			#echo ${!command}
-			echo "${MENU}${NUMBER} $i)${MENU} ${!title}${NORMAL}"
+			echo "\n${NUMBER}${!title}"
+			
+			for ii in {1..30}
+			do
+				title="Menu_Heading"$i"_Item"$ii"_Title"
+				#command="Menu_Item"$i"_Command"
+				if [ "${!title}" != "" ]; then
+					#echo ${!title}
+					#echo ${!command}
+					echo "${MENU}${NUMBER} $iii)${MENU} ${!title}${NORMAL}"
+					iii=$(($iii+1));
+				fi
+			done
 		fi
 	done
-	
 
 
-
-	echo "${MENU}${NUMBER} x)${MENU} Exit ${NORMAL}"
+	#echo "${MENU}${NUMBER} x)${MENU} Exit ${NORMAL}"
 
 	echo ""
 	#echo "${MENU}***********************************************${NORMAL}"
@@ -115,29 +125,40 @@ mainmenu_input() {
 			*)clear;
 	
 			#Configured menu items
+			iii=1;
 			for i in {1..30}
 			do
-			
-				if (( $i == $opt ))
-				then
-					#Executing the configured command
-					title="Menu_Item"$i"_Title"
-					command="Menu_Item"$i"_Command"
-					execute_start_note "${!title}";
+				title="Menu_Heading"$i"_Title"
+				if [ "${!title}" != "" ]; then
 					
-					#execCmd="$MODULEDIR/${!command}" 
-					execCmd="${!command}" 
-					
-					#echo $execCmd;
-					$execCmd;
-					
-					execute_end_note "${!title}";
-					read -p "Press enter for menu...";
-					mainmenu_input;
-				fi
+					for ii in {1..30}
+					do
+						title="Menu_Heading"$i"_Item"$ii"_Title"
+						if [ "${!title}" != "" ]; then
 
+							if (( $iii == $opt ))
+							then
+								#Executing the configured command
+								command="Menu_Heading"$i"_Item"$ii"_Command"
+								execute_start_note "${!title}";
+
+								execCmd="${!command}" 
+								
+								#echo $execCmd;
+								$execCmd;
+								
+								execute_end_note "${!title}";
+								read -p "Press enter for menu...";
+								mainmenu_input;
+							fi	
+						
+						
+						
+							iii=$(($iii+1));
+						fi
+					done
+				fi
 			done
-			
 
 			exit;
 			;;
@@ -162,8 +183,6 @@ execute_end_note() {
 	echo "${MENU}***********************************************${NORMAL}"
 
 }
-
-
 
 
 mainmenu_input;
