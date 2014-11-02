@@ -81,6 +81,15 @@ Either way, make sure to get in touch with us through <http://title.dk> for this
 
 
 
+### Adding version/branch/tag number
+
+e.g.:
+
+	v. master/#e185ff8 (2014-07-23)
+	v. 1.0/#e185ff8 (2014-07-23)
+	v. dev/#e185ff8 (2014-07-23)
+
+
 
 ### Make the default environment configurable
 
