@@ -7,7 +7,8 @@
 ALL_ARGS="$@";
 
 #defining the module directory
-MODULEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd .. && pwd )";
+BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../.. && pwd )";
+MODULEDIR="$BASEDIR/ttools-core";
 
 #including libraries
 source $MODULEDIR/lib/inc.sh;
@@ -142,9 +143,9 @@ mainmenu_input() {
 								command="Menu_Heading"$i"_Item"$ii"_Command"
 								execute_start_note "${!title}";
 
-								execCmd="${!command}" 
+								execCmd="$BASEDIR/${!command}" 
 								
-								#echo $execCmd;
+								echo $execCmd;
 								$execCmd;
 								
 								execute_end_note "${!title}";
