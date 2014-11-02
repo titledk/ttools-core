@@ -3,10 +3,10 @@
 _by Title Web Solutions / Anselm Christophersen, 2014_
 
 
-_Terminal Tools_ is a menu based set of easy-to-use command line scripts for working on 
+_Terminal Tools_ is a menu based set of easy-to-use command line scripts for working on    
 **Web Development Projects**.    
-_Terminal Tools_ is easy to extend (through modules) and amend (through configuration)
-- both through global project settings, and environment specific settings 
+_Terminal Tools_ is easy to extend (through modules) and 
+amend (through configuration) - both through global project settings, and environment specific settings 
 (e.g. Live/Test/Dev servers), all done through one `yml` configuration file.
 
 
@@ -25,6 +25,7 @@ A standard config will be set up for you on install. Here's an example of how th
 			Repodir: "/var/git-repos/mysite"
 			Sshport: ""
 			Composerpath: ""
+			PhpPath: ""
 		Test:
 		#here goes data for a test server
 		Dev:
@@ -79,13 +80,6 @@ us to implement it, or create it yourself and send a pull request.
 Either way, make sure to get in touch with us through <http://title.dk> for this.
 
 
-
-* Menu headings
-	* 
-* Default menus, configurable in modules
-	* Currently
-* Sub menus    
-Define a sub menu API
 
 
 ### Make the default environment configurable
