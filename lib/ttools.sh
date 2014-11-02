@@ -141,11 +141,11 @@ mainmenu_input() {
 							then
 								#Executing the configured command
 								command="Menu_Heading"$i"_Item"$ii"_Command"
-								execute_start_note "${!title}";
+								execute_start_note "${!title}" ${!command};
 
 								execCmd="$BASEDIR/${!command}" 
 								
-								echo $execCmd;
+								#echo $execCmd;
 								$execCmd;
 								
 								execute_end_note "${!title}";
@@ -172,8 +172,9 @@ mainmenu_input() {
 #This is what's shown whenever a command from the menu is executed
 execute_start_note() {
 	echo "${MENU}***********************************************${NORMAL}"
-	echo "${MENU}Executing ${NORMAL}$1 ${MENU}...${NORMAL}"
+	echo "${MENU}Executing: ${NORMAL}$1 ${MENU}...${NORMAL}"
 	#echo "Direct command: $SCRIPT_COMMAND $ALL_ARGS"
+	echo "${MENU}Command:   ${NORMAL}$2";
 	echo "${MENU}***********************************************${NORMAL}"
 
 }
