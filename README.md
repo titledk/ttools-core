@@ -77,6 +77,13 @@ Planned:
 * **SilverStripe Deployment**: Git-based deployment like in our [deployment module](https://github.com/titledk/silverstripe-deployment) 
 
 
+Below you see _Terminal Tools_ configured with
+[Git Helpers](https://github.com/titledk/ttools-githelpers)
+and [Wordpress Sync](https://github.com/CPHCloud/ttools-wordpress-sync).
+
+![Ttools with Modules](docs/img/ttools-modules.png)
+
+
 
 ## Roadmap/Ideas/Plans
 
