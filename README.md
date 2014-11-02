@@ -1,23 +1,14 @@
 # Terminal Tools
 
-_by Title Web Solutions / Anselm Christophersen_
+_by Title Web Solutions / Anselm Christophersen, 2014_
 
 
-A helper for running local command line scripts.    
+_Terminal Tools_ is a menu based set of easy-to-use command line scripts for working on 
+**Web Development Projects**.    
+_Terminal Tools_ is easy to extend (through modules) and amend (through configuration)
+- both through global project settings, and environment specific settings 
+(e.g. Live/Test/Dev servers), all done through one `yml` configuration file.
 
-**NOTE: THIS IS WORK IN PROGRESS/PROOF OF CONCEPT**    
-**API/CONFIG SYSTEM MAY CHANGE DRASTICALLY**
-
-
-## Idea
-
-The idea behind _Terminal Tools_ is to have a common set of easy-to-use
-tools whenever working on a **Web Development Project**.
-
-It should be the goto-toolbox for any commandline-related tasks - with
-all project-specific configuration done in one central `yml` file.    
-Additionally menu/used scripts are easily customizeable in the config on
-a per-project basis.
 
 ![Main menu](docs/img/ttools.png)
 
@@ -29,7 +20,7 @@ A standard config will be set up for you on install. Here's an example of how th
 	Projectname: "My Project"
 	Environments:
 		Live:
-			Host: "mysite.com"
+			Host: "myserver.com"
 			Sshuser: "myuser"
 			Repodir: "/var/git-repos/mysite"
 			Sshport: ""
@@ -78,4 +69,81 @@ framework or scripting language. It's written in pure bash.
 Run the following command. This module will be added to your project as a sub module.
 
 	git submodule add git://github.com/titledk/ttools-core.git;./ttools-core/_install.sh;
+
+
+## Roadmap/Ideas/Plans
+
+This is some of the functionality we're planning for `ttools-core`.    
+There is no due date, so if you'd like one of these features, you can sponsor
+us to implement it, or create it yourself and send a pull request.
+Either way, make sure to get in touch with us through <http://title.dk> for this.
+
+
+
+* Menu headings
+	* 
+* Default menus, configurable in modules
+	* Currently
+* Sub menus    
+Define a sub menu API
+
+
+### Make the default environment configurable
+
+Either via `yml`, you just by calling `./ttools ENV`, e.g. `./ttools Dev`
+
+This could allow menus like this:
+
+Current menu:
+
+	Please choose a menu number and press ENTER.
+	 1) Git Pull & Sync Submodules
+	 2) Overwrite Local Site with Database & Assets from Dev Site
+	 3) Deploy Dev Site
+	 4) SSH Dev Site
+
+Menu with environment configuration:
+
+	Please choose a menu number and press ENTER.
+	 1) Git Pull & Sync Submodules
+	 2) Overwrite Local Site with Database & Assets from Dev Site
+	 	2a) Live site, 2b) Test site
+	 3) Deploy Dev Site
+	 	3a) Live site, 3b) Test site
+	 4) SSH Dev Site
+	 	4a) Live site, 4b) Test site
+
+
+
+
+### Menu options
+
+Define a sub menu API, so scripts can define which options they can be called with,
+which would then be visible in the menu.
+
+This idea is a little along "Make the default environment configurable", but for other options.
+
+e.g.
+
+Current menu:
+
+	 13) git add all and commit 
+	 14) git add all commit and push 
+	 15) git add all commit and push (+Live deploy) 
+	 16) git add all commit and push (+Test deploy) 
+	 17) git add all commit and push (+Dev deploy) 
+
+
+Menu with options:
+
+	 13) git add all and commit
+	 	13a) & Push
+	 	13b) & Push & Deploy to Dev Site
+	 		13ba) Live Site, 13bb) Test Site
+
+
+
+
+
+
 
