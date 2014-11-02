@@ -59,8 +59,10 @@ Environments:
     Sshuser: \"$SSHUSER\"
     Repodir: \"$REPODIR\"
     #additional settings
+    Domain: \"\"
     Sshport: \"\"
     Composerpath: \"\"
+    PhpPath: \"\"
   Test:
     #here goes data for a test server
   Dev:
