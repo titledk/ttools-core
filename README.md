@@ -67,7 +67,7 @@ The following modules are available:
 
 * [Git Helpers](https://github.com/titledk/ttools-githelpers): 
 Pull and push - and git based deployment to your environments
-* **Wordpress Sync (on it's way)**: syncing database and assets from 
+* [Wordpress Sync](https://github.com/CPHCloud/ttools-wordpress-sync): syncing database and assets from 
 Wordpress sites - for development and backup
 
 
