@@ -67,7 +67,7 @@ The following modules are available:
 
 * [Git Helpers](https://github.com/titledk/ttools-githelpers): 
 Pull and push - and git based deployment to your environments
-* [Wordpress Sync](https://github.com/CPHCloud/ttools-wordpress-sync): syncing database and assets from 
+* [Wordpress Sync](https://github.com/CPHCloud/ttools-sitesync-wordpress): syncing database and assets from 
 Wordpress sites - for development and backup
 
 
@@ -79,7 +79,7 @@ Planned:
 
 Below you see _Terminal Tools_ configured with
 [Git Helpers](https://github.com/titledk/ttools-githelpers)
-and [Wordpress Sync](https://github.com/CPHCloud/ttools-wordpress-sync).
+and [Wordpress Sync](https://github.com/CPHCloud/ttools-sitesync-wordpress).
 
 ![Ttools with Modules](docs/img/ttools-modules.png)
 
