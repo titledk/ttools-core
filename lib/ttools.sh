@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 # The Terminal Tools Core File
 # Acts as menu, and as shortcut handler
+
 
 
 #getting all arguments
@@ -45,16 +46,27 @@ RED_TEXT=`echo "\033[31m"`
 ENTER_LINE=`echo "\033[33m"`
 
 
+
+
+
+
+#echo -e "${FG_RED}${BG_GREEN}${FS_BOLD}Hello world!${RESET_ALL}"
+
+#exit;
+
+
+
 logo() {
 
-	echo "Title Web Solution's${ENTER_LINE}"
+
+
+	echo -e "Title Web Solution's ${FG_YELLOW}${FS_BOLD}"
 	echo '  ______                    _             __   ______            __    '
 	echo ' /_  __/__  _________ ___  (_)___  ____ _/ /  /_  __/___  ____  / /____'
 	echo '  / / / _ \/ ___/ __ `__ \/ / __ \/ __ `/ /    / / / __ \/ __ \/ / ___/'
 	echo ' / / /  __/ /  / / / / / / / / / / /_/ / /    / / / /_/ / /_/ / (__  ) '
 	echo '/_/  \___/_/  /_/ /_/ /_/_/_/ /_/\__,_/_/    /_/  \____/\____/_/____/  '
-	echo '                                                                       '
-
+	echo -e "                                                                        ${RESET_ALL}"
 
 }
 
@@ -63,10 +75,9 @@ show_mainmenu(){
 	
 	logo;
 	
-	echo "for ${NORMAL}$Projectname${NORMAL}"
+	echo -e "for ${FG_YELLOW}${FS_BOLD}$Projectname ${RESET_ALL}"
 	echo ''
-	echo "${ENTER_LINE}Please choose a menu number and press ENTER.${NORMAL}"
-	#echo "${MENU}***********************************************${NORMAL}"
+	echo "Please choose a menu number and press ENTER."
 	
 	#Creating menu based on individual configuration
 	iii=1;
@@ -76,7 +87,9 @@ show_mainmenu(){
 		if [ "${!title}" != "" ]; then
 			#echo ${!title}
 			#echo ${!command}
-			echo "\n${NUMBER}${!title}"
+			
+			echo ''
+			echo -e "${FG_YELLOW}${FS_BOLD}${!title} ${RESET_ALL}"
 			
 			for ii in {1..30}
 			do
@@ -85,7 +98,7 @@ show_mainmenu(){
 				if [ "${!title}" != "" ]; then
 					#echo ${!title}
 					#echo ${!command}
-					echo "${MENU}${NUMBER} $iii)${MENU} ${!title}${NORMAL}"
+					echo " $iii) ${!title}"
 					iii=$(($iii+1));
 				fi
 			done
@@ -96,8 +109,7 @@ show_mainmenu(){
 	#echo "${MENU}${NUMBER} x)${MENU} Exit ${NORMAL}"
 
 	echo ""
-	#echo "${MENU}***********************************************${NORMAL}"
-	echo "${RED_TEXT}NOTE: ${ENTER_LINE}This should be run from your LOCAL environment. ${NORMAL}"
+	echo "NOTE: This should be run from your LOCAL environment."
 	read opt
 }
 
@@ -171,18 +183,19 @@ mainmenu_input() {
 
 #This is what's shown whenever a command from the menu is executed
 execute_start_note() {
-	echo "${MENU}***********************************************${NORMAL}"
-	echo "${MENU}Executing: ${NORMAL}$1 ${MENU}...${NORMAL}"
+
+	echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
+	echo "Executing: $1..."
 	#echo "Direct command: $SCRIPT_COMMAND $ALL_ARGS"
-	echo "${MENU}Command:   ${NORMAL}$2";
-	echo "${MENU}***********************************************${NORMAL}"
+	echo "Command:   $2";
+	echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
 
 }
 #This is what's shown whenever a command from the menu has finished executing
 execute_end_note() {
-	echo "${MENU}***********************************************${NORMAL}"
-	echo "${MENU}${NORMAL}$1 ${MENU}has finished executing.${NORMAL}"
-	echo "${MENU}***********************************************${NORMAL}"
+	echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
+	echo "$1 has finished executing."
+	echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
 
 }
 
