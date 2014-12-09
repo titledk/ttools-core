@@ -92,6 +92,31 @@ There is no due date, so if you'd like one of these features, you can sponsor
 us to implement it, or create it yourself and send a pull request.
 Either way, make sure to get in touch with us through <http://title.dk> for this.
 
+
+### Introduce [semantic versioning](http://semver.org)
+
+At least on core    
+_So things don't just break for people who use this_
+
+### Install `ttools` and it's plugins as git modules inside of one directory
+
+Currently:
+
+* ttools-core
+* ttools-githelpers
+* ttools-sitesync-core
+* ttools-sitesync-wordrpess
+
+Better
+
+* ttools
+	* core
+	* githelpers
+	* sitesync-core
+	* sitesync-wordpress
+
+
+
 ### Split environments out to own module
 
 Mostly only we projects have the need to configure environments. By moving this out, Terminal Tools
@@ -99,7 +124,7 @@ will be open for a broader spread of projects.
 
 When this is done, we should also:
 
-* Mntroduce [semantic versioning](http://semver.org) at least on core    
+* Introduce [semantic versioning](http://semver.org) at least on core    
 _So things don't just break for people who use this_
 * Make installation 1-liners:
   * Wep project
