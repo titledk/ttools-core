@@ -107,7 +107,7 @@ Currently:
 * ttools-sitesync-core
 * ttools-sitesync-wordrpess
 
-Better
+Better:
 
 * ttools
 	* core
@@ -119,7 +119,7 @@ Better
 
 ### Split environments out to own module
 
-Mostly only we projects have the need to configure environments. By moving this out, Terminal Tools
+Mostly only web projects have the need to configure environments. By moving this out, Terminal Tools
 will be open for a broader spread of projects.
 
 When this is done, we should also:
