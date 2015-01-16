@@ -73,7 +73,7 @@ Menu:
     Item1:
       Title: SSH Live Site
       Command: \"ttools-core/local/ssh.sh Live\"
-" > ttools-config.yml;
+" > ttools/config.yml;
 
 
 #creating the "deploy" script, and setting permissions
@@ -84,11 +84,11 @@ Menu:
 
 
 echo "#!/bin/sh
-./ttools-core/lib/ttools.sh \"\$@\"" > ttools;
-chmod u+x ttools;
+./ttools/core/lib/ttools.sh \"\$@\"" > tt;
+chmod u+x tt;
 
 echo "";
-echo "Installation is done. You can now run Terminal Tools by running \"./ttools\"";
+echo "Installation is done. You can now run Terminal Tools by running \"./tt\"";
 echo "Remember to commit the changes to your repository."
 echo ""
 

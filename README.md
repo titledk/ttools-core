@@ -45,7 +45,7 @@ A standard config will be set up for you on install. Here's an example of how th
 
 Run the following command. This module will be added to your project as a sub module.
 
-	git submodule add git://github.com/titledk/ttools-core.git;./ttools-core/_install.sh;
+	git submodule add git://github.com/titledk/ttools-core.git ttools/core;./ttools/core/_install.sh;
 
 
 

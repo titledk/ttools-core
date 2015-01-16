@@ -8,8 +8,10 @@
 ALL_ARGS="$@";
 
 #defining the module directory
-BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../.. && pwd )";
-MODULEDIR="$BASEDIR/ttools-core";
+BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../../.. && pwd )";
+MODULEDIR="$BASEDIR/ttools/core";
+
+echo $MODULEDIR;
 
 #including libraries
 source $MODULEDIR/lib/inc.sh;

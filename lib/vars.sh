@@ -10,12 +10,12 @@ source $DIR/inc.sh;
 
 #Finding the script's dir
 #from http://stackoverflow.com/questions/59895/can-a-bash-script-tell-what-directory-its-stored-in
-BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../.. && pwd )";
+BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../../.. && pwd )";
 #echo provided config file: $1;
 
 #Reading configuration
 #from http://stackoverflow.com/questions/5983558/reading-a-config-file-from-a-shell-script
-CONFIGFILE="$BASEDIR/ttools-config.yml"
+CONFIGFILE="$BASEDIR/ttools/config.yml"
 #
 #echo $CONFIGFILE;
 #
