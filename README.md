@@ -98,24 +98,6 @@ Either way, make sure to get in touch with us through <http://title.dk> for this
 At least on core    
 _So things don't just break for people who use this_
 
-### Install `ttools` and it's plugins as git modules inside of one directory
-
-Currently:
-
-* ttools-core
-* ttools-githelpers
-* ttools-sitesync-core
-* ttools-sitesync-wordrpess
-
-Better:
-
-* ttools
-	* core
-	* githelpers
-	* sitesync-core
-	* sitesync-wordpress
-
-
 
 ### Split environments out to own module
 
