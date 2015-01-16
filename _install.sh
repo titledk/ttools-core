@@ -72,7 +72,7 @@ Menu:
     Title: Live Site
     Item1:
       Title: SSH Live Site
-      Command: \"ttools-core/local/ssh.sh Live\"
+      Command: \"ttools/core/local/ssh.sh Live\"
 " > ttools/config.yml;
 
 
