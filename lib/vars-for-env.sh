@@ -44,14 +44,17 @@ echo "ENV_Domain=${!domain}"
 #php path
 if [[ -z "${!phppath}" || "${!phppath}" == "" ]]; then
 	echo "ENV_PHPPATH=php"
+	ENV_PHPPATH="php";
 else
 	echo "ENV_PHPPATH=${!phppath}"
+	ENV_PHPPATH="${!phppath}";
 fi
 #composer path
 if [[ -z "${!composerpath}" || "${!composerpath}" == "" ]]; then
 	echo "ENV_COMPOSERPATH=composer"
 else
-	echo "ENV_COMPOSERPATH=${!composerpath}"
+	#this creates the full composer path - with the php command
+	echo "ENV_COMPOSERPATH=\"$ENV_PHPPATH ${!composerpath}\""
 fi
 
 
