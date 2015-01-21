@@ -9,9 +9,14 @@ ALL_ARGS="$@";
 
 #defining the module directory
 BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../../.. && pwd )";
+CURRENT_BRANCH="$(git branch | sed -n '/\* /s///p')";
+
 MODULEDIR="$BASEDIR/ttools/core";
 
-echo $MODULEDIR;
+cd $MODULEDIR;
+REVISION=$(git log -1 --pretty=format:'%h' --abbrev-commit)
+REVISIONMSG=$(git log -1 --pretty=format:'%s' --abbrev-commit)
+REVISIONDATE=$(git log -1 --pretty=format:'%ci' --abbrev-commit)
 
 #including libraries
 source $MODULEDIR/lib/inc.sh;
@@ -77,7 +82,7 @@ show_mainmenu(){
 	
 	logo;
 	
-	echo -e "for ${FG_YELLOW}${FS_BOLD}$Projectname ${RESET_ALL}"
+	echo -e "for ${FG_YELLOW}${FS_BOLD}$Projectname ${RESET_ALL}($CURRENT_BRANCH)"
 	echo ''
 	echo "Please choose a menu number and press ENTER."
 	
@@ -112,6 +117,7 @@ show_mainmenu(){
 
 	echo ""
 	echo "NOTE: This should be run from your LOCAL environment."
+	echo "v. $REVISIONDATE (#$REVISION)"
 	read opt
 }
 
