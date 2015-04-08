@@ -65,13 +65,18 @@ if [ "${!host}" != "" ]; then
 
 	#defining custom_sshconnectionstr
 	PORTSTR="";
+	RSYNCPORTSTR="";
 	if [ "${!sshport}" != "" ]; then
 	  PORTSTR="-p ${!sshport}"
+	  RSYNCPORTSTR="ssh -p ${!sshport}";
 	fi
 	echo "ENV_CUSTOM_SSHPORTSTR=\"$PORTSTR\"";
+	echo "ENV_CUSTOM_RSYNCPORTSTR=\"$RSYNCPORTSTR\"";
 
+	#custom connection string that respects different ports
 	CUSTOM_SSHCONNECTIONSTR="$PORTSTR ${!sshuser}@${!host}";
 	echo "ENV_CUSTOM_SSHCONNECTIONSTR=\"$CUSTOM_SSHCONNECTIONSTR\"";
+	
 
 
 fi
