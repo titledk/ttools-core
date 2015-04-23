@@ -93,11 +93,6 @@ us to implement it, or create it yourself and send a pull request.
 Either way, make sure to get in touch with us through <http://title.dk> for this.
 
 
-### Introduce [semantic versioning](http://semver.org)
-
-At least on core    
-_So things don't just break for people who use this_
-
 
 ### Split environments out to own module
 
