@@ -28,6 +28,15 @@ You can also install only the core like this:
 
 That will install a basic configuration file for you.
 
+## Modules
+
+Modules should go next to `core` inside of the `ttools` directory in your repo, and should be
+added as git submodules.
+To update all modules, including core to latest version, run
+`./ttools/core/local/upgrade.sh`.
+
+
+
 ## Configuration example
 
 A standard config will be set up for you on install. Here's an example of how this might look:
