@@ -4,8 +4,8 @@ _by Title Web Solutions / Anselm Christophersen_
 
 
 _Terminal Tools_ is a menu based set of easy-to-use command line scripts for working on    
-**Web Development**- and other projects. You can apply anywhere you need a light weight,
-configurable menu for your bash scripts.
+**Web Development**- and other projects. You can apply it anywhere you need a _light weight,
+configurable menu for your bash scripts_.
 _Terminal Tools_ is easy to extend (through modules) and 
 amend (through configuration) - both through global project settings, and environment specific settings 
 (e.g. Live/Test/Dev servers), all done through one `yml` configuration file.
@@ -84,5 +84,21 @@ Future plans with the module are many. You can find them here:
 
 If there's anything specific you'd like to be done (fast), post a bounty on it!
 We support bounties using [Bountysource](https://www.bountysource.com).
+
+
+
+## Alternatives
+
+Terminal Tools tries to be a _light weight, configurable menu for your bash scripts_,
+and is so far mainly used for supporting PHP based web development, but that's not
+the only possible use case.
+
+Alternatives to Terminal Tools are:
+
+* [WP CLI](http://wp-cli.org)
+* [Symfony Console](http://symfony.com/doc/current/components/console/introduction.html)
+
+If you know of other alternatives, please let us know!
+
 
 
