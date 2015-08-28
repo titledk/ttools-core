@@ -76,6 +76,15 @@ to easily ssh into your specific servers.
 Everything else can be added via modules.
 
 
+## Trouble Shooting
+
+### Perl warnings, e.g. `perl: warning: Setting locale failed.`
+
+If you're on OSX, following [this answer](http://stackoverflow.com/a/7413863), add the following to your `.profile`:
+
+	export LC_CTYPE=en_US.UTF-8
+	export LC_ALL=en_US.UTF-8
+
 
 ## Roadmap/Ideas/Plans
 
