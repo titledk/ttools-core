@@ -20,11 +20,13 @@ In order to best get up and running with a full feature set, you should be using
 like these:
 
 * [Terminal Tools for SilverStripe](https://github.com/titledk/ttools-silverstripe), or
-* [Terminal Tools for Wordpress](https://github.com/CPHCloud/ttools-wordpress) (note that the wordpress version needs to be updated)
+* [Terminal Tools for Wordpress](https://github.com/CPHCloud/ttools-wordpress)
 
 You can also install only the core like this:
 
-	git submodule add git://github.com/titledk/ttools-core.git ttools/core;./ttools/core/_install.sh;
+```shell
+git submodule add git://github.com/titledk/ttools-core.git ttools/core;./ttools/core/_install.sh;
+```
 
 That will install a basic configuration file for you.
 
@@ -41,29 +43,30 @@ To update all modules, including core to latest version, run
 
 A standard config will be set up for you on install. Here's an example of how this might look:
 
-	Projectname: "My Project"
-	Environments:
-		Live:
-			Host: "myserver.com"
-			Sshuser: "myuser"
-			Repodir: "/var/git-repos/mysite"
-			Sshport: ""
-			Composerpath: ""
-			PhpPath: ""
-		Test:
-		#here goes data for a test server
-		Dev:
-		#here goes data for dev server - you can add as many servers as you want
+```yml
+Projectname: "My Project"
+Environments:
+	Live:
+		Host: "myserver.com"
+		Sshuser: "myuser"
+		Repodir: "/var/git-repos/mysite"
+		Sshport: ""
+		Composerpath: ""
+		PhpPath: ""
+	Test:
+	#here goes data for a test server
+	Dev:
+	#here goes data for dev server - you can add as many servers as you want
 
-	#this is the menu - you can configure it exactly like you like
-	Menu:
-		Item1:
-			Title: SSH Live Site
-			Command: "ttools-core/local/ssh.sh Live"
-		Item2:
-			Title: My specific command
-			Command: "my-scripts/my-specific-command.sh"
-
+#this is the menu - you can configure it exactly like you like
+Menu:
+	Item1:
+		Title: SSH Live Site
+		Command: "ttools-core/local/ssh.sh Live"
+	Item2:
+		Title: My specific command
+		Command: "my-scripts/my-specific-command.sh"
+```
 
 
 ## How To Use
@@ -82,9 +85,10 @@ Everything else can be added via modules.
 
 If you're on OSX, following [this answer](http://stackoverflow.com/a/7413863), add the following to your `.profile`:
 
-	export LC_CTYPE=en_US.UTF-8
-	export LC_ALL=en_US.UTF-8
-
+```shell
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+```
 
 ## Roadmap/Ideas/Plans
 
