@@ -117,8 +117,16 @@ show_mainmenu(){
 
 	echo ""
 	echo "NOTE: This should be run from your LOCAL environment."
-	echo "v. $REVISIONDATE (#$REVISION)"
+	echo "ttools core v. $REVISIONDATE (#$REVISION)"
+	echo "Press \"U\" to update ttools libraries."
 	read opt
+}
+
+update() {
+	clear
+	$BASEDIR/ttools/core/local/upgrade.sh
+	read -p "Press enter for menu...";
+	mainmenu_input;
 }
 
 mainmenu_input() {
@@ -136,7 +144,12 @@ mainmenu_input() {
 			#echo test tst
 			#show_menu;
 			#;;
-	
+
+			u)update;
+			;;
+			U)update;
+			;;
+
 			x)exit;
 			;;
 	
