@@ -30,6 +30,13 @@ git submodule add git://github.com/titledk/ttools-core.git ttools/core;./ttools/
 
 That will install a basic configuration file for you.
 
+## Update to latest version
+
+For versions as of March 2016, just launch `./tt`, and press `U`. Taht'll update all installed terminal tools modules to the latest version.   
+Alternatively, and on older versions, run `./ttools/core/local/upgrade.sh`.
+
+Remember to commit changes.
+
 ## Modules
 
 Modules should go next to `core` inside of the `ttools` directory in your repo, and should be
