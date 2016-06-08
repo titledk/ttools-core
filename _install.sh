@@ -25,10 +25,6 @@ echo "${MENU}***********************************************${NORMAL}"
 echo "Welcome to the Terminal Tools Installer";
 echo "";
 echo "Now creating your config file.";
-echo "This assumes you've already got a server set up."; 
-echo "If you don't have a server set up yet, you can just enter expected information";
-echo "- you can always change this in the config later.";
-
 
 
 echo "";
@@ -37,27 +33,16 @@ echo "Please enter the project name:"
 read PROJECTNAME
 
 
-echo "Please enter the host name of your server:"
-read HOST
-
-echo "Please enter your SSH user:"
-read SSHUSER
-
-echo "Please enter the path that your repository is checked out to on the server:"
-read REPODIR
-
-
 
 #creation of config, based on input
 
 echo "Projectname: \"$PROJECTNAME\"
-AvailableEnvironments: \"Live, Test, Dev\"
 Environments:
   Live:
     #required
-    Host: \"$HOST\"
-    Sshuser: \"$SSHUSER\"
-    Repodir: \"$REPODIR\"
+    Host: \"\"
+    Sshuser: \"\"
+    Repodir: \"\"
     #additional settings
     Domain: \"\"
     Sshport: \"\"
@@ -74,13 +59,6 @@ Menu:
       Title: SSH Live Site
       Command: \"ttools/core/local/ssh.sh Live\"
 " > ttools/config.yml;
-
-
-#creating the "deploy" script, and setting permissions
-
-#It'll create a file with the following contents:
-##!/bin/sh
-#./ttools-core/lib/ttools.sh "$@"
 
 
 echo "#!/bin/sh
