@@ -46,7 +46,7 @@ if [[ -z "${!phppath}" || "${!phppath}" == "" ]]; then
 	echo "ENV_PHPPATH=php"
 	ENV_PHPPATH="php";
 else
-	echo "ENV_PHPPATH=${!phppath}"
+	echo "ENV_PHPPATH=\"${!phppath}\""
 	ENV_PHPPATH="${!phppath}";
 fi
 #composer path
