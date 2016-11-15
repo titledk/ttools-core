@@ -178,14 +178,21 @@ mainmenu_input() {
 							then
 								#Executing the configured command
 								command="Menu_Heading"$i"_Item"$ii"_Command"
-								execute_start_note "${!title}" ${!command};
+
+								echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
+								echo "Executing: ${!title}..."
+								echo "Command:   ${!command}";
+								echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
 
 								execCmd="$BASEDIR/${!command}" 
 								
-								#echo $execCmd;
+								echo $execCmd;
 								$execCmd;
-								
-								execute_end_note "${!title}";
+
+								echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
+								echo "${!title} has finished executing."
+								echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
+
 								read -p "Press enter for menu...";
 								mainmenu_input;
 							fi	
@@ -205,25 +212,6 @@ mainmenu_input() {
 	done
 
 }
-
-#This is what's shown whenever a command from the menu is executed
-execute_start_note() {
-
-	echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
-	echo "Executing: $1..."
-	#echo "Direct command: $SCRIPT_COMMAND $ALL_ARGS"
-	echo "Command:   $2";
-	echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
-
-}
-#This is what's shown whenever a command from the menu has finished executing
-execute_end_note() {
-	echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
-	echo "$1 has finished executing."
-	echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
-
-}
-
 
 mainmenu_input;
 
