@@ -186,7 +186,7 @@ mainmenu_input() {
 
 								execCmd="$BASEDIR/${!command}" 
 								
-								echo $execCmd;
+								#echo $execCmd;
 								$execCmd;
 
 								echo -e "${FG_BLUE}${FS_BOLD}***********************************************${RESET_ALL}"
