@@ -15,7 +15,9 @@ for d in */ ; do
 	echo '';
 	echo Updating $d;
 	cd $d;
-	git pull;
+	git fetch origin;
+	git checkout master;
+	git rebase origin/master;
 	cd ..;
 done
 
