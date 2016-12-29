@@ -75,6 +75,27 @@ Menu:
 		Command: "my-scripts/my-specific-command.sh"
 ```
 
+### Local overrides
+
+Sometimes it would be beneficial to be able to override `config.yml` locally.  
+This can be done by placing a `config_local.yml` next to your `config.yml`.  
+Make sure to add this file to your `.gitignore` - this way each developer can set his/her
+own settings here.
+
+Example:
+
+```yml
+Environments:
+  Staging:
+    Sshuser: "myuser"
+    Repodir: "/var/www/webroot/"
+Menu:
+  Heading2:
+    Item3:
+      Title: My custom command
+      Command: "my-custom-command.sh"
+```
+
 
 ## How To Use
 

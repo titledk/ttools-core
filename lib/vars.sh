@@ -16,6 +16,7 @@ BASEDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && cd ../../.. && pwd )";
 #Reading configuration
 #from http://stackoverflow.com/questions/5983558/reading-a-config-file-from-a-shell-script
 CONFIGFILE="$BASEDIR/ttools/config.yml"
+CONFIGFILE_LOCAL="$BASEDIR/ttools/config_local.yml"
 #
 #echo $CONFIGFILE;
 #
@@ -28,6 +29,11 @@ CONFIGFILE="$BASEDIR/ttools/config.yml"
 
 
 parse_yaml $CONFIGFILE
+#allowing overrides by local config file
+if [ -f "$CONFIGFILE_LOCAL" ]
+then
+	parse_yaml $CONFIGFILE_LOCAL
+fi
 
 
 
